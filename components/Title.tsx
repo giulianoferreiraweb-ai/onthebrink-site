@@ -8,9 +8,13 @@ const modak = Modak({
   subsets: ["latin"],
 });
 
+interface TitleProps {
+  isMobile: boolean;
+}
+
 const text = "builds visual stories";
 
-export default function Title() {
+export default function Title({ isMobile }: TitleProps) {
   return (
     <section
       style={{
@@ -20,7 +24,7 @@ export default function Title() {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        padding: "0 20px",
+        padding: isMobile ? "0 20px" : "0",
       }}
     >
       <motion.h1
@@ -31,11 +35,13 @@ export default function Title() {
           margin: 0,
 
           display: "flex",
-          flexDirection: "column",
+          flexDirection: isMobile ? "column" : "row",
+
           alignItems: "center",
           justifyContent: "center",
 
-          gap: "8px",
+          gap: isMobile ? "8px" : "12px",
+
           lineHeight: 1,
         }}
       >
@@ -43,7 +49,7 @@ export default function Title() {
         <span
           className={modak.className}
           style={{
-            fontSize: "clamp(48px, 8vw, 64px)",
+            fontSize: isMobile ? "56px" : "64px",
             letterSpacing: "0.4px",
             color: "#F9F4E6",
           }}
@@ -56,12 +62,18 @@ export default function Title() {
           style={{
             display: "flex",
             flexWrap: "wrap",
+
             justifyContent: "center",
+
             opacity: 0.9,
-            fontSize: "clamp(18px, 4vw, 32px)",
+
+            fontSize: isMobile ? "20px" : "32px",
+
             color: "#F9F4E6",
-            letterSpacing: "2px",
-            maxWidth: "280px",
+
+            letterSpacing: isMobile ? "1px" : "2px",
+
+            maxWidth: isMobile ? "280px" : "none",
           }}
         >
           {text.split("").map((char, i) => (
@@ -83,8 +95,9 @@ export default function Title() {
       {/* CTA */}
       <div
         style={{
-          marginTop: "28px",
+          marginTop: isMobile ? "28px" : "32px",
           display: "flex",
+
           justifyContent: "center",
         }}
       >
@@ -92,27 +105,41 @@ export default function Title() {
           href="https://wa.me/5512997474824"
           style={{
             textDecoration: "none",
-            padding: "12px 22px",
+            padding: isMobile
+              ? "12px 22px"
+              : "14px 28px",
+
             borderRadius: "999px",
             border: "none",
+
             background: "#D24A16",
             color: "#F9F4E6",
-            fontSize: "11px",
+
+            fontSize: isMobile ? "11px" : "13px",
+
             letterSpacing: "2px",
+
             cursor: "pointer",
+
             transition: "all 0.3s ease",
+
             fontFamily: "Moderustic, sans-serif",
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = "#F9F4E6";
-            e.currentTarget.style.color = "#020202";
+            if (!isMobile) {
+              e.currentTarget.style.background =
+                "#F9F4E6";
+              e.currentTarget.style.color =
+                "#020202";
+            }
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = "#D24A16";
-            e.currentTarget.style.color = "#F9F4E6";
+            if (!isMobile) {
+              e.currentTarget.style.background =
+                "#D24A16";
+              e.currentTarget.style.color =
+                "#F9F4E6";
+            }
           }}
         >
           START A PROJECT
