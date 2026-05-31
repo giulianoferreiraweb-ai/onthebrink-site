@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/giuferreira/onthebrink-site/app/globals.css"],"sourcesContent":["body {\n  margin: 0;\n  background: #020202;\n  color: white;\n  font-family: Arial, sans-serif;\n}"],"names":[],"mappings":"AAAA"}}]
+}

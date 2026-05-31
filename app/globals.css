@@ -1,26 +1,50 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html {
+  scroll-behavior: smooth;
 }
+@font-face {
+  font-family: "Moderustic";
+  src: url("/fonts/Moderustic-Medium.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #020202;
+}
+html, body {
+  font-family: "Moderustic", sans-serif;
+}
+a, span {
+  transition: all 0.3s ease;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  background-image: url("/Noise.png");
+  background-repeat: repeat;
+
+  opacity: 0.2;
+
+  pointer-events: none;
+
+  z-index: 9999;
+}
+@media (max-width: 768px) {
+
+  .mobile-stack {
+    grid-template-columns: 1fr !important;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .mobile-center {
+    text-align: center !important;
+  }
+
+  .mobile-hide {
+    display: none !important;
+  }
+
 }
