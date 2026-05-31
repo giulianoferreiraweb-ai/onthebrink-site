@@ -1,4 +1,5 @@
 node_modulest
+.next
 .DS_Store
 .env
 .env.local
