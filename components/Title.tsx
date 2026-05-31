@@ -3,18 +3,19 @@
 import { motion } from "framer-motion";
 import { Modak } from "next/font/google";
 
+
 const modak = Modak({
   weight: "400",
   subsets: ["latin"],
 });
 
 interface TitleProps {
-  isMobile: boolean;
+  isMobile?: boolean;
 }
 
 const text = "builds visual stories";
 
-export default function Title({ isMobile }: TitleProps) {
+export default function Title({ isMobile = false }: TitleProps) {
   return (
     <section
       style={{

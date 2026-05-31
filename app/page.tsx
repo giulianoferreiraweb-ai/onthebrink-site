@@ -9,8 +9,35 @@ import Impact from "../components/Impact";
 import Work from "../components/Work";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
-
 export default function Home() {
+  // simple hook to detect mobile viewport
+  function useMobile() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      if (typeof window === "undefined") return;
+
+      const mq = window.matchMedia("(max-width: 768px)");
+      const handle = () => setIsMobile(mq.matches);
+
+      // initialize
+      handle();
+
+      if (mq.addEventListener) mq.addEventListener("change", handle);
+      else mq.addListener(handle);
+
+      return () => {
+        if (mq.removeEventListener) mq.removeEventListener("change", handle);
+        else mq.removeListener(handle);
+      };
+    }, []);
+
+    return isMobile;
+  }
+
+  const isMobile = useMobile();
+
+  
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
