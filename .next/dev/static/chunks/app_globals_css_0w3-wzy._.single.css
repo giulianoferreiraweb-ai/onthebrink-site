@@ -1,0 +1,49 @@
+/* [project]/app/globals.css [app-client] (css) */
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: Moderustic;
+  src: url("/fonts/Moderustic-Medium.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body {
+  background: #020202;
+  margin: 0;
+  padding: 0;
+  font-family: Moderustic, sans-serif;
+}
+
+a, span {
+  transition: all .3s;
+}
+
+body:before {
+  content: "";
+  opacity: .2;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("/Noise.png");
+  background-repeat: repeat;
+  position: fixed;
+  inset: 0;
+}
+
+@media (max-width: 768px) {
+  .mobile-stack {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mobile-center {
+    text-align: center !important;
+  }
+
+  .mobile-hide {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=app_globals_css_0w3-wzy._.single.css.map*/

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/giuferreira/onthebrink-site/app/page.tsx"],"sourcesContent":["import Title from \"../components/Title\";\n\nexport default function Home() {\n  return (\n    <main style={{ position: \"relative\", height: \"100vh\", overflow: \"hidden\" }}>\n    </main>\n  );\n}"],"names":["Home","style","position","height","overflow"],"mappings":";;;;;;AAEe,SAASA;IACtB,qBACE,8OAAC;QAAKC,OAAO;YAAEC,UAAU;YAAYC,QAAQ;YAASC,UAAU;QAAS;;;;;;AAG7E"}}]
+}
